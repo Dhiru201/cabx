@@ -386,7 +386,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="aBv-xV-wF4"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Condensed" family="American Typewriter" pointSize="8"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Condensed" family="American Typewriter" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2FE92828B39C45464EE66342 /* Pods_CabX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34364900B7FA86F8439CDB5B /* Pods_CabX.framework */; };
-		4F2EA9EFA4D2CD09703D9CEB /* Pods_CabFinder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F7A4E7D5CAC0DAE2E7B63C3 /* Pods_CabFinder.framework */; };
 		F30846421F21F768009D63A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30846411F21F768009D63A0 /* AppDelegate.swift */; };
 		F30846471F21F768009D63A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30846451F21F768009D63A0 /* Main.storyboard */; };
 		F30846491F21F768009D63A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30846481F21F768009D63A0 /* Assets.xcassets */; };
@@ -18,19 +17,16 @@
 		F308465F1F235092009D63A0 /* UrlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308465E1F235092009D63A0 /* UrlHelper.swift */; };
 		F30846611F238778009D63A0 /* OlaCabPricing.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30846601F238778009D63A0 /* OlaCabPricing.swift */; };
 		F32C5FC01F442A3500772B46 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C5FBF1F442A3500772B46 /* Extensions.swift */; };
-		F32C5FC41F44312A00772B46 /* CabUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C5FC31F44312A00772B46 /* CabUILabel.swift */; };
 		F32C5FC61F44386600772B46 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C5FC51F44386600772B46 /* LocationSearchViewController.swift */; };
-		F32C5FC81F4438CA00772B46 /* CabxNavBarTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C5FC71F4438CA00772B46 /* CabxNavBarTitleView.swift */; };
 		F364FF7C1F45E2F7006B41CB /* CabsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F364FF7B1F45E2F7006B41CB /* CabsTableViewCell.swift */; };
 		F364FF7E1F473A4E006B41CB /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F364FF7D1F473A4E006B41CB /* Alerts.swift */; };
 		F364FF7F1F4772E6006B41CB /* CabDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F364FF791F4595F1006B41CB /* CabDetailsViewController.swift */; };
+		F36A15861F70EB83008C7BDA /* sampleInfo.env in Resources */ = {isa = PBXBuildFile; fileRef = F36A15851F70EB83008C7BDA /* sampleInfo.env */; };
 		F3EABE591F6CFF0A00B5A1E2 /* GMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EABE581F6CFF0900B5A1E2 /* GMap.swift */; };
-		F3EABE5B1F6D1E1800B5A1E2 /* Constants.swift.sample in Sources */ = {isa = PBXBuildFile; fileRef = F3EABE5A1F6D1E1800B5A1E2 /* Constants.swift.sample */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1ABE1F630971B192D27C2614 /* Pods-CabFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CabFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-CabFinder/Pods-CabFinder.release.xcconfig"; sourceTree = "<group>"; };
-		1F7A4E7D5CAC0DAE2E7B63C3 /* Pods_CabFinder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CabFinder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34364900B7FA86F8439CDB5B /* Pods_CabX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CabX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A145F36E0ED5DBA6AB299E0 /* Pods-CabFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CabFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CabFinder/Pods-CabFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		BCD43152E3309D03DDCBAF7C /* Pods-CabX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CabX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CabX/Pods-CabX.debug.xcconfig"; sourceTree = "<group>"; };
@@ -46,14 +42,12 @@
 		F308465E1F235092009D63A0 /* UrlHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHelper.swift; sourceTree = "<group>"; };
 		F30846601F238778009D63A0 /* OlaCabPricing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OlaCabPricing.swift; sourceTree = "<group>"; };
 		F32C5FBF1F442A3500772B46 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = ../Extensions.swift; sourceTree = "<group>"; };
-		F32C5FC31F44312A00772B46 /* CabUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabUILabel.swift; sourceTree = "<group>"; };
 		F32C5FC51F44386600772B46 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
-		F32C5FC71F4438CA00772B46 /* CabxNavBarTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabxNavBarTitleView.swift; sourceTree = "<group>"; };
 		F364FF791F4595F1006B41CB /* CabDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabDetailsViewController.swift; sourceTree = "<group>"; };
 		F364FF7B1F45E2F7006B41CB /* CabsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabsTableViewCell.swift; sourceTree = "<group>"; };
 		F364FF7D1F473A4E006B41CB /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		F36A15851F70EB83008C7BDA /* sampleInfo.env */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sampleInfo.env; sourceTree = "<group>"; };
 		F3EABE581F6CFF0900B5A1E2 /* GMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMap.swift; sourceTree = "<group>"; };
-		F3EABE5A1F6D1E1800B5A1E2 /* Constants.swift.sample */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Constants.swift.sample; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F2EA9EFA4D2CD09703D9CEB /* Pods_CabFinder.framework in Frameworks */,
 				2FE92828B39C45464EE66342 /* Pods_CabX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,7 +94,6 @@
 		F30846401F21F768009D63A0 /* CabFinder */ = {
 			isa = PBXGroup;
 			children = (
-				F32C5FC21F4430F900772B46 /* Components */,
 				F30846411F21F768009D63A0 /* AppDelegate.swift */,
 				F32C5FC11F442A7600772B46 /* Controllers */,
 				F35DB3621F24C1E7001FB87E /* Cell */,
@@ -111,6 +103,7 @@
 				F30846451F21F768009D63A0 /* Main.storyboard */,
 				F30846481F21F768009D63A0 /* Assets.xcassets */,
 				F308464A1F21F768009D63A0 /* LaunchScreen.storyboard */,
+				F36A15851F70EB83008C7BDA /* sampleInfo.env */,
 				F308464D1F21F768009D63A0 /* Info.plist */,
 			);
 			path = CabFinder;
@@ -119,7 +112,6 @@
 		F30846571F2325A4009D63A0 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				F3EABE5A1F6D1E1800B5A1E2 /* Constants.swift.sample */,
 				F30846551F21F990009D63A0 /* Constants.swift */,
 			);
 			name = Settings;
@@ -154,15 +146,6 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
-		F32C5FC21F4430F900772B46 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				F32C5FC31F44312A00772B46 /* CabUILabel.swift */,
-				F32C5FC71F4438CA00772B46 /* CabxNavBarTitleView.swift */,
-			);
-			name = Components;
-			sourceTree = "<group>";
-		};
 		F35DB3621F24C1E7001FB87E /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,7 +157,6 @@
 		F4239402049666C778F3435B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F7A4E7D5CAC0DAE2E7B63C3 /* Pods_CabFinder.framework */,
 				34364900B7FA86F8439CDB5B /* Pods_CabX.framework */,
 			);
 			name = Frameworks;
@@ -193,7 +175,7 @@
 				F308463C1F21F768009D63A0 /* Resources */,
 				2A4F51AD924791E814EBA2B7 /* [CP] Embed Pods Frameworks */,
 				307AA449744E06472A9ED499 /* [CP] Copy Pods Resources */,
-				F31281D21F667136008611DF /* ShellScript */,
+				F31281D21F667136008611DF /* fabric_Install */,
 			);
 			buildRules = (
 			);
@@ -244,6 +226,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F36A15861F70EB83008C7BDA /* sampleInfo.env in Resources */,
 				F308464C1F21F768009D63A0 /* LaunchScreen.storyboard in Resources */,
 				F30846491F21F768009D63A0 /* Assets.xcassets in Resources */,
 				F30846471F21F768009D63A0 /* Main.storyboard in Resources */,
@@ -283,13 +266,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CabX/Pods-CabX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F31281D21F667136008611DF /* ShellScript */ = {
+		F31281D21F667136008611DF /* fabric_Install */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = fabric_Install;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,9 +305,6 @@
 				F3EABE591F6CFF0A00B5A1E2 /* GMap.swift in Sources */,
 				F364FF7C1F45E2F7006B41CB /* CabsTableViewCell.swift in Sources */,
 				F30846421F21F768009D63A0 /* AppDelegate.swift in Sources */,
-				F3EABE5B1F6D1E1800B5A1E2 /* Constants.swift.sample in Sources */,
-				F32C5FC81F4438CA00772B46 /* CabxNavBarTitleView.swift in Sources */,
-				F32C5FC41F44312A00772B46 /* CabUILabel.swift in Sources */,
 				F364FF7F1F4772E6006B41CB /* CabDetailsViewController.swift in Sources */,
 				F308465C1F232F7A009D63A0 /* UberCabPricing.swift in Sources */,
 				F32C5FC61F44386600772B46 /* LocationSearchViewController.swift in Sources */,
@@ -468,7 +449,7 @@
 				INFOPLIST_FILE = CabFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dhirendra.CabFinder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ispro.CabX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -489,7 +470,7 @@
 				INFOPLIST_FILE = CabFinder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dhirendra.CabFinder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ispro.CabX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

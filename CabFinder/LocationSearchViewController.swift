@@ -11,7 +11,7 @@ import GoogleMaps
 import GooglePlaces
 import SwiftyJSON
 
-enum Location {
+enum Location{
 	case startLocation
 	case destinationLocation
 }
@@ -51,7 +51,7 @@ class LocationSearchViewController: UIViewController, GMSMapViewDelegate, CLLoca
 	var start_longitude:CLLocationDegrees?
 	var end_latitude:CLLocationDegrees?
 	var end_longitude:CLLocationDegrees?
-	var isLocationPermission:Bool = false
+	var isLocationPermission:Bool?
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +62,7 @@ class LocationSearchViewController: UIViewController, GMSMapViewDelegate, CLLoca
 	override func viewWillAppear(_ animated: Bool) {
 		self.navTitleViewSettings()
 		self.setUpGoogleMap()
+		self.setShadow()
 	}
 	
 	
@@ -157,6 +158,7 @@ class LocationSearchViewController: UIViewController, GMSMapViewDelegate, CLLoca
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		if status == .authorizedWhenInUse {
 			isLocationPermission = true
+			
 			locationManager.startUpdatingLocation()
 		}
 	}

@@ -20,9 +20,9 @@ extension LocationSearchViewController{
 		locationManager.desiredAccuracy = kCLLocationAccuracyBest
 		locationManager.startMonitoringSignificantLocationChanges()
 		self.googleMap.delegate = self
-		self.googleMap?.isMyLocationEnabled = true
+		self.googleMap.isMyLocationEnabled = true
 		self.googleMap.settings.myLocationButton = true
-		googleMap.padding = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+		self.googleMap.padding = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
 		self.googleMap.settings.zoomGestures = true
 		self.googleMap.settings.allowScrollGesturesDuringRotateOrZoom = false
 	}
@@ -37,7 +37,7 @@ extension LocationSearchViewController{
 		}
 		self.googleMap.camera = camera
 		if self.location.startPlace != nil && self.location.endPlace != nil{
-			self.drawPath()
+			self.drawPathOnMap()
 		}
 	}
 	
@@ -68,7 +68,12 @@ extension LocationSearchViewController{
 	internal func currentLocationPermission(){
 		if isLocationPermission == true{
 			locationManager.startUpdatingLocation()
+			print("location permission granted")
 			let camera = GMSCameraPosition.camera(withLatitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 15.0)
+			self.googleMap.camera = camera
+		}else{
+			print("location permission not granted")
+			let camera = GMSCameraPosition.camera(withLatitude:23.4497913,longitude: 78.3333057, zoom: 5.0)
 			self.googleMap.camera = camera
 		}
 	}
@@ -124,7 +129,7 @@ extension LocationSearchViewController{
 	}
 	
 	
-	internal func drawPath(){
+	internal func drawPathOnMap(){
 		self.googleMap.clear()
 		self.createStartPoint()
 		self.createEndPoint()

@@ -45,6 +45,7 @@ class OlaCabPrice{
 	static func fetchOlaPricingData(baseUrl:String, url:String, parameters:[String:Float], callback:@escaping ([OlaCabPrice]?,Error?) -> Void) {
 		var result:[OlaCabPrice] = []
 		let header = ["X-APP-TOKEN":"\(Constants.olaAppTOKEN)"]
+		print("fetchCall")
 		URLHelper.get(baseUrl: baseUrl, url: url, parameters:parameters , headers: header, callback: {
 			response in
 			if response.error != nil{
