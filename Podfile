@@ -7,6 +7,5 @@ target 'CabX' do
   pod 'GooglePlacesAPI'
   pod 'Alamofire', '~> 4.4'
   pod 'SwiftyJSON'
-  pod 'Fabric'
   pod 'Crashlytics'
 end
