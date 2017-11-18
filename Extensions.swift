@@ -67,6 +67,7 @@ extension LocationSearchViewController{
 	
 	internal func currentLocationPermission(){
 		if isLocationPermission == true{
+			print("yes")
 			locationManager.startUpdatingLocation()
 			print("location permission granted")
 			let camera = GMSCameraPosition.camera(withLatitude: (locationManager.location?.coordinate.latitude)!, longitude: (locationManager.location?.coordinate.longitude)!, zoom: 15.0)

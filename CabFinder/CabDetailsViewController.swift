@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import GooglePlaces
+
 
 
 class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
@@ -23,13 +23,15 @@ class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableVie
 	@IBOutlet weak var cabsTableView: UITableView!
 	@IBOutlet var headerView: UIView!
 	
+	@IBOutlet var uberCheapest: UILabel!
+	@IBOutlet var olaCheapest: UILabel!
 	var isOlaApiCallInProgress = false
 	var isUberApiCallInProgress = false
 	var dest:String!
 	var from:String!
 	var uberData:Array<UberCabPrice> = []
 	var olaData:Array<OlaCabPrice> = []
-	var uberSelected:Bool = true
+	var olaSelected:Bool = true
 	var start_latitude:Float?
 	var start_longitude:Float?
 	var end_latitude:Float?
@@ -43,7 +45,23 @@ class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableVie
 
 	override func viewWillAppear(_ animated: Bool) {
 		self.initialSetup()
+		self.uberCheapest.isHidden = true
+		self.olaCheapest.isHidden = true
 		loaderSettings(isHidden:false)
+	}
+	
+	func toggleSelector(){
+		if (self.olaData.count > 1) && (self.uberData.count > 1){
+			if (self.olaData[0].fare < self.uberData[0].fare){
+				self.uberCheapest.isHidden = true
+				self.olaCheapest.isHidden = false
+				self.olaDetails(olaCabButton)
+			}else{
+				self.uberDetails(uberCabButton)
+				self.uberCheapest.isHidden = false
+				self.olaCheapest.isHidden = true
+			}
+		}
 	}
 	
 	func initialSetup(){
@@ -54,7 +72,7 @@ class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableVie
 		self.headerView.dropShadow(shadowRadius:  3, shadowOpacity: 0.3, offSet: CGSize(width: 0, height: 3))
 		self.backButton.dropShadow(shadowRadius: 2, shadowOpacity: 0.3, offSet: CGSize(width: 0, height: 2))
 		self.addressLabel.dropShadow(shadowRadius: 2, shadowOpacity: 0.3, offSet: CGSize(width: 0, height: 2))
-		self.openAPP.setImage(UIImage(named: "uberLOGO"), for: .normal)
+		self.openAPP.setImage(UIImage(named: "olaLOGO"), for: .normal)
 		self.openAPP.dropShadow(shadowRadius: 3, shadowOpacity: 0.3, offSet: CGSize(width: 0, height: 3))
 	}
 	
@@ -65,7 +83,7 @@ class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableVie
 	}
 	
 	@IBAction func uberDetails(_ sender: Any) {
-		self.uberSelected = true
+		self.olaSelected = false
 		self.cabsTableView.reloadData()
 		self.uberCabButton.backgroundColor = Constants.selectedTabColor
 		self.olaCabButton.backgroundColor = Constants.unselectedTabColor
@@ -78,7 +96,7 @@ class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableVie
 	}
 	
 	@IBAction func olaDetails(_ sender: Any) {
-		self.uberSelected = false
+		self.olaSelected = true
 		self.cabsTableView.reloadData()
 		self.olaCabButton.backgroundColor = Constants.selectedTabColor
 		self.uberCabButton.backgroundColor = Constants.unselectedTabColor
@@ -90,28 +108,26 @@ class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableVie
 		}
 	}
 	
-	
 	@IBAction func openAPP(_ sender: Any) {
 		let url:String!
 		let deeplinkURL:String!
-		if uberSelected {
-			 url = Constants.uberWebURL
-			deeplinkURL = Constants.uberDeeplinkURL(pickup_lat: self.start_latitude!, pickup_long: self.start_longitude!, drop_lat: self.end_latitude!, drop_lng: self.end_longitude!, pickup_address: self.from, drop_address: self.dest).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+		if olaSelected {
+			url = Constants.olaWebURL
+			deeplinkURL = Constants.olaDeeplinkURL(pickup_lat: self.start_latitude!, pickup_long: self.start_longitude!, drop_lat: self.end_latitude!, drop_long: self.end_longitude!)
 		}else{
-			 url = Constants.olaWebURL
-			deeplinkURL = Constants.olaDeeplinkURL(pickup_lat: self.start_latitude!, pickup_long: self.start_longitude!, drop_lat: self.end_latitude!, drop_lng: self.end_longitude!).addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-		}
+			 url = Constants.uberWebURL
+			deeplinkURL = Constants.uberDeeplinkURL(pickup_lat: self.start_latitude!, pickup_long: self.start_longitude!, drop_lat: self.end_latitude!, drop_long: self.end_longitude!)
+			}
+		
 		// If app is installed, construct and open deep link.
-		if UIApplication.shared.canOpenURL(URL(string:deeplinkURL)!) {
-			UIApplication.shared.open(URL(string:deeplinkURL)!)
+		if UIApplication.shared.canOpenURL(URL(string: deeplinkURL)!) {
+				UIApplication.shared.open(URL(string:deeplinkURL)!)
 		} else {
-		// No app, open the app store.
+			// No app, open the app store.
 			UIApplication.shared.open(URL(string: url)!)
-		}
+			}
 	}
 	
-	
-	//	let _url = URL(string: "uber://?client_id=05QXb_PPbMvBHLHg8yPUns2dcrwlVzrT&action=setPickup&pickup[latitude]=28.4238&pickup[longitude]=77.1087&pickup[formatted_address]=Current Location&dropoff[latitude]=28.4945&dropoff[longitude]=77.0996&dropoff[formatted_address]=Sector 24".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!)
 	
 	private func fetchUberData(){
 		if (self.start_latitude) != nil && (self.end_latitude != nil){
@@ -167,6 +183,7 @@ class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableVie
 			}
 			self.sortData(isOla: isOla)
 			self.cabsTableView.reloadData()
+			self.toggleSelector()
 		}else{
 			Alert.warning(message: "No Items found")
 		}
@@ -177,10 +194,10 @@ class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableVie
 	}
 	
 	func numberOfSections(in tableView: UITableView) -> Int {
-		if uberSelected{
-			return self.uberData.count
-		}else{
+		if olaSelected{
 			return self.olaData.count
+		}else{
+			return self.uberData.count
 		}
 	}
 	
@@ -191,10 +208,10 @@ class CabDetailsViewController: UIViewController, UITableViewDelegate,UITableVie
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell" , for: indexPath) as! CabsTableViewCell
 		cell.dropShadow(shadowRadius: 3, shadowOpacity: 0.3, offSet: CGSize(width: 0, height: 3))
-		if uberSelected{
-			cell.uberData = self.uberData[indexPath.section]
-		}else{
+		if olaSelected{
 			cell.olaData = self.olaData[indexPath.section]
+		}else{
+			cell.uberData = self.uberData[indexPath.section]
 		}
 		return cell
 	}

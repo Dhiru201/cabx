@@ -29,7 +29,7 @@ class OlaCabPrice{
 			self.fare = 0
 		}else{
 			self.totalDistance = data["distance"] as! Double
-			let price = data["amount_max"] as! Int
+			let price = data["amount_min"] as! Int
 			self.fare = price
 			let time = data["travel_time_in_minutes"] as! Int
 			if time <= 60{

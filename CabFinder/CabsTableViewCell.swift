@@ -42,10 +42,12 @@ class CabsTableViewCell: UITableViewCell {
 		self.cabFare.text = "Rs. \(self.olaData.fare)"
 		let totalDistance = olaData.totalDistance
 		let totalTime = olaData.travlingTime
-		if totalDistance ==  0 {
+		if self.olaData.cabType ==  "share" {
 			self.distanceANDtime.text = "For One Person"
+		}else if self.olaData.cabType == "outstation" {
+				  self.distanceANDtime.text = "For more Details Please Contact olacabs.com"
 		}else{
-		self.distanceANDtime.text = " \(totalDistance) Km. in \(totalTime)"
+			self.distanceANDtime.text = " \(totalDistance) Km. in \(totalTime)"
 		}
 	}
 }

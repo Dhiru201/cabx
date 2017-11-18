@@ -157,9 +157,8 @@ class LocationSearchViewController: UIViewController, GMSMapViewDelegate, CLLoca
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		if status == .authorizedWhenInUse {
-			isLocationPermission = true
-			
 			locationManager.startUpdatingLocation()
+			isLocationPermission = true
 		}
 	}
 

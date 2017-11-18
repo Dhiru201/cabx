@@ -63,10 +63,11 @@ class Constants{
 	
 	static let unselectedTabColor: UIColor = UIColor(netHex: 0xF4D233)
 
-	class func olaDeeplinkURL(pickup_lat:Float, pickup_long:Float, drop_lat:Float, drop_lng:Float) -> String{
-		return "olacabs://app/launch?lat=<\(pickup_lat)>&lng=<\(pickup_long)>&utm_source=<\(self.olaAppTOKEN)>&landing_page=bk&drop_lat=<\(drop_lat)>&drop_lng=<\(drop_lng)>"
+	class func olaDeeplinkURL(pickup_lat:Float, pickup_long:Float, drop_lat:Float, drop_long:Float) -> String{
+		return "https://olawebcdn.com/assets/ola-universal-link.html?lat=\(pickup_lat)&lng=\(pickup_long)&category=micro&utm_source=\(self.olaAppTOKEN)&landing_page=bk&drop_lat=\(drop_lat)&drop_lng=\(drop_long)"
 	}
-	class func uberDeeplinkURL(pickup_lat:Float,pickup_long:Float, drop_lat:Float , drop_lng:Float, pickup_address:String, drop_address:String)-> String{
-		return "uber://?client_id=\(self.uberClientId)&action=setPickup&pickup[latitude]=\(pickup_lat)8&pickup[longitude]=\(pickup_long)&pickup[nickname]=\(pickup_address)&dropoff[latitude]=\(drop_lat)&dropoff[longitude]=\(drop_lng)&dropoff[formatted_address]= \(drop_address)"
+	
+	class func uberDeeplinkURL(pickup_lat:Float, pickup_long:Float, drop_lat:Float, drop_long:Float)-> String{
+        return "uber://?client_id=\(Constants.uberClientId)&action=setPickup&pickup[latitude]=\(pickup_lat)&pickup[longitude]=\(pickup_long)&dropoff[latitude]=\(drop_lat)&dropoff[longitude]=\(drop_long)"
 	}
 }
